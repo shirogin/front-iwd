@@ -1,12 +1,53 @@
-.Home{
+:root{
+    --primary:#56BCA6;
+    --secondary:#828FED;
+}
+.Home {
     background-image: url(../images/lines.png);
     background-size: contain;
     height: 100vh;
     width: 100%;
 }
-.Home nav{
-    padding: 3em;
+.Home nav {
+    padding: 2em 6em;
+    display: flex;
+    align-items: center;
 }
-.Home nav img{
+.Home nav img {
     width: 6em;
+    margin-right: auto;
+}
+.Lang {
+    display: flex;
+    align-items: center;
+}
+.Main{
+    padding: 0 6em;
+}
+.Main img{
+    width: 25em;
+
+}
+.Main h1{
+    font-size: 5em;
+    color:var(--primary);
+    text-transform: uppercase;
+    margin: 0;
+}
+.Main h1 span{
+    color:var(--secondary);
+}
+.Main h2{
+    text-transform: uppercase;
+    font-size: 3.2em;
+    margin: 0;
+}
+.Main p{
+    font-size: 1.4em;
+    color: gray;
+}
+.Main .main-button{
+    margin-right: 2em;
+    font-size: 1.3em;
+    border-width:  5px!important;
 }
