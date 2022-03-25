@@ -53,7 +53,7 @@ const Installation = () => {
         <div style={styles.root}>
             <MobileStepper
                 variant="progress"
-                steps={6}
+                steps={5}
                 position="static"
                 activeStep={installation.step}
                 sx={styles.progressbar}
