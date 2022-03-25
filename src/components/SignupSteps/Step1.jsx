@@ -29,12 +29,12 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        color: "black",
+        color: selected ? "white" : "black",
         width: "50%",
         height: "200px",
         justifyContent: "flex-end",
         alignItems: "center",
-        backgroundColor: selected ? "#828FED" : "white",
+        backgroundColor: selected ? "#56BCA6" : "white",
         "& p": {
             fontSize: "1.5rem",
         },
@@ -66,6 +66,9 @@ function Step1() {
                 <Paper
                     elevation={8}
                     sx={styles.genderBtn(data.gender === "female")}
+                    onClick={() =>
+                        dispatch(setData({ ...data, gender: "female" }))
+                    }
                 >
                     <img src={femaleimg} style={{ width: "50%" }} />
                     <Typography paragraph>Female</Typography>
@@ -73,6 +76,9 @@ function Step1() {
                 <Paper
                     elevation={8}
                     sx={styles.genderBtn(data.gender === "male")}
+                    onClick={() =>
+                        dispatch(setData({ ...data, gender: "male" }))
+                    }
                 >
                     <img src={maleimg} style={{ width: "50%" }} />
                     <Typography paragraph>Male</Typography>
@@ -89,7 +95,7 @@ function Step1() {
                         Back
                     </Button>
                     <Button
-                        onClick={() => dispatch(next())}
+                        onClick={() => (data.gender ? dispatch(next()) : null)}
                         variant="contained"
                         sx={styles.btn}
                     >

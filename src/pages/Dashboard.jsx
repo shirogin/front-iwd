@@ -1,4 +1,3 @@
-
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { setData } from "../app/slices/dashboard";
 import Navbar from "../components/Navbar/Navbar";
