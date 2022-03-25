@@ -1,13 +1,17 @@
 
 import { useAppSelector, useAppDispatch } from "../app/hooks";
-import { next,prev } from "../app/slices/installation";
-
+import { setData } from "../app/slices/dashboard";
+import Navbar from "../components/Navbar/Navbar";
+import { Container } from "@mui/material";
 const Dashboard = () => {
-    const installation = useAppSelector((state) => state.installation) ,
-        dispatch = useAppDispatch()
-    return <div>
-        <h1>{installation.step}</h1>
-        <button onClick={()=>{dispatch(next())}}>next</button>
-    </div>;
+    const dashboard = useAppSelector((state) => state.dashboard),
+        dispatch = useAppDispatch();
+
+    return (
+        <Container>
+            <Navbar />
+            <h1>{}</h1>
+        </Container>
+    );
 };
 export default Dashboard;
