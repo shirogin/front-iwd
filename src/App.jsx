@@ -4,19 +4,22 @@ import { removeUser, setUser } from "./app/slices/user";
 
 import { useAppDispatch } from "./app/hooks";
 import { createTheme, ThemeProvider } from "@mui/material";
+
 import "./App.css";
 const theme = createTheme({
     palette: {
-        mode: "dark",
+        mode: "light",
         primary: {
-            main: "#96f8fb",
+            main: "#56BCA6",
             light: "#fff",
             dark: "#3ea0a3",
-            contrastText: "#030505",
+            contrastText: "#fff",
         },
-        background: {
-            default: "#030505",
-            paper: "#101010",
+        secondary: {
+            main: "#828FED",
+            light: "#fff",
+            dark: "#3ea0a3",
+            contrastText: "#fff",
         },
     },
     typography: {
@@ -30,6 +33,9 @@ const theme = createTheme({
                 },
             },
         },
+    },
+    shape: {
+        borderRadius: 15,
     },
 });
 function App() {
