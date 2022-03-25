@@ -22,11 +22,10 @@ const styles = {
         fontSize: "2rem",
         width: "250px",
         borderRadius: "10px",
-        color: "white",
-        backgroundColor: "#56BCA6",
         marginBottom: 2,
+        margin: "0 15px",
     },
-    genderBtn: {
+    genderBtn: (selected) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -35,12 +34,12 @@ const styles = {
         height: "200px",
         justifyContent: "flex-end",
         alignItems: "center",
-        backgroundColor: "white",
+        backgroundColor: selected ? "#828FED" : "white",
         "& p": {
             fontSize: "1.5rem",
         },
         margin: "0 20px",
-    },
+    }),
     link: {
         color: "#56BCA6",
     },
@@ -64,31 +63,39 @@ function Step1() {
                     alignItems: "center",
                 }}
             >
-                <Paper elevation={8} sx={styles.genderBtn}>
+                <Paper
+                    elevation={8}
+                    sx={styles.genderBtn(data.gender === "female")}
+                >
                     <img src={femaleimg} style={{ width: "50%" }} />
                     <Typography paragraph>Female</Typography>
                 </Paper>
-                <Paper elevation={8} sx={styles.genderBtn}>
+                <Paper
+                    elevation={8}
+                    sx={styles.genderBtn(data.gender === "male")}
+                >
                     <img src={maleimg} style={{ width: "50%" }} />
                     <Typography paragraph>Male</Typography>
                 </Paper>
-                {/* <Button sx={styles.genderBtn}>
-                    <img src={femaleimg} style={{ width: "50%" }} />
-                    <Typography paragraph>Female</Typography>
-                </Button>
-                <Button sx={styles.genderBtn}>
-                    <img src={maleimg} style={{ width: "50%" }} />
-                    <Typography paragraph>Male</Typography>
-                </Button> */}
             </Box>
             <Box>
-                <Button
-                    onClick={() => dispatch(next())}
-                    variant="contained"
-                    sx={styles.btn}
-                >
-                    Next
-                </Button>
+                <Box>
+                    <Button
+                        onClick={() => dispatch(prev())}
+                        variant="contained"
+                        sx={styles.btn}
+                        color="grey"
+                    >
+                        Back
+                    </Button>
+                    <Button
+                        onClick={() => dispatch(next())}
+                        variant="contained"
+                        sx={styles.btn}
+                    >
+                        Next
+                    </Button>
+                </Box>
                 <Typography paragraph>
                     Existing user?{" "}
                     <Link style={styles.link} to="/signin">

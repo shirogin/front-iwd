@@ -2,6 +2,8 @@ import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { next, prev, setData } from "../app/slices/installation";
 import MobileStepper from "@mui/material/MobileStepper";
 
+import { Button } from "@mui/material";
+
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
