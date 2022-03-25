@@ -56,12 +56,6 @@ function Step3() {
     const arr = Array(data.etab === "P" ? 5 : data.etab === "M" ? 4 : 3).fill(
         0
     );
-    data.etab === "p"
-        ? Array(5).fill(0)
-        : data.etab === "m"
-        ? Array(4)
-        : Array(3);
-    console.log(arr);
     return (
         <div style={styles.root}>
             <Box>
@@ -80,6 +74,7 @@ function Step3() {
                 {arr.map((val, idx) => (
                     <Box
                         sx={styles.yearBtn(data.year === idx + 1)}
+                        key={idx}
                         onClick={() =>
                             dispatch(
                                 setData({
