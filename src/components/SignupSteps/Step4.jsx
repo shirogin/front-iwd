@@ -7,7 +7,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import { useSignUpMutation } from "../../app/backend";
 import { next, prev, setData } from "../../app/slices/installation";
+import { setUser } from "../../app/slices/user";
 
 import { Link } from "react-router-dom";
 
@@ -78,6 +80,7 @@ const offers = [
 ];
 
 function Step4() {
+    const [signUp] = useSignUpMutation();
     const { data } = useAppSelector((state) => state.installation);
     const dispatch = useAppDispatch();
 
@@ -137,7 +140,9 @@ function Step4() {
                     <Button
                         onClick={() => {
                             if (data.goal) {
-                                dispatch(next());
+                                signUp(data).then((res) => {
+                                    setUser(res.data);
+                                });
                             }
                         }}
                         variant="contained"
