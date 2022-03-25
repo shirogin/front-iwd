@@ -1,0 +1,10 @@
+.welcomeNav{
+    display: flex;
+    width: 100%;
+    padding: 0 10em;
+    margin-bottom: auto;
+    justify-content: space-between;
+}
+.welcomeNav button{
+    margin: auto 0 auto;
+}

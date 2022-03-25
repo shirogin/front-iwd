@@ -1,7 +1,4 @@
-:root{
-    --primary:#56BCA6;
-    --secondary:#828FED;
-}
+
 .Home {
     background-image: url(../images/lines.png);
     background-size: contain;

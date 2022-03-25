@@ -21,6 +21,10 @@ const theme = createTheme({
             dark: "#3ea0a3",
             contrastText: "#fff",
         },
+        info: {
+            main: "#70C1F2",
+            contrastText: "#fff",
+        },
     },
     typography: {
         fontFamily: `"Roboto Mono", monospace, Arial, Helvetica, sans-serif`,

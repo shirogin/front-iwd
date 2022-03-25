@@ -1,0 +1,29 @@
+{
+    "H3": [
+        {
+            "id": 1,
+            "module": {
+                "name": "Math",
+                "image": "",
+                "description": "in this course you will learn all about expentiel function and logaritmics ones ,probabilities ,squencesand complex numbers",
+                "chapters": [
+                    {
+                        "title": "Exponential function",
+                        "elements": [
+                            {
+                                "type": "video",
+                                "video": "https://www.youtube.com/user/noureddine2013",
+                                "description": "in this chapter will know what's an expo function ,how to study in 'R'and how to derivate it & integrate it "
+                            },
+                            {
+                                "type": "multiple choices",
+                                "question": "what's the derivate of 'e^x'?",
+                                "answer": ["x*e^x", "-e^x", "e^x"]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
