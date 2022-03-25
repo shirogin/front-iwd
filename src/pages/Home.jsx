@@ -82,7 +82,7 @@ const Home = () => {
                     <Grid container item xs={12} sx={{ marginTop: "6em" }}>
                         <Button
                             component={Link}
-                            to="/installed"
+                            to="/installation"
                             id="lang-button"
                             variant="contained"
                             size="large"

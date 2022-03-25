@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initial_state = JSON.parse(
-    localStorage.getItem("Installation") || '{ "step": 0,"data":{} }'
+    localStorage.getItem("Installation") || '{ "step": 1,"data":{} }'
 );
 
 const minSteps = 0;
