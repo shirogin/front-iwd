@@ -1,5 +1,5 @@
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { next, prev, setData } from "../../app/slices/installation";
+import { next, setData } from "../../app/slices/installation";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { Button, Box, Paper, Divider } from "@mui/material";
@@ -49,7 +49,7 @@ function Step0() {
     };
 
     return (
-        <div style={styles.root}>
+        <Box sx={styles.root}>
             <Box>
                 <Typography variant="h2">Tell us more about you</Typography>
                 <Typography paragraph>
@@ -127,7 +127,7 @@ function Step0() {
                 Next
             </Button>
             {/* <button onClick={() => dispatch(next())}>next</button> */}
-        </div>
+        </Box>
     );
 }
 

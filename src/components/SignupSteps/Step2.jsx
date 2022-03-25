@@ -6,9 +6,6 @@ import { next, prev, setData } from "../../app/slices/installation";
 
 import { Link } from "react-router-dom";
 
-import femaleimg from "../../images/female.svg";
-import maleimg from "../../images/male.svg";
-
 const styles = {
     root: {
         flexGrow: 1,
@@ -55,7 +52,7 @@ function Step2() {
     const dispatch = useAppDispatch();
 
     return (
-        <div style={styles.root}>
+        <Box sx={styles.root}>
             <Box>
                 <Typography variant="h2">What is your study level</Typography>
                 <Typography paragraph>
@@ -136,7 +133,7 @@ function Step2() {
                     </Link>
                 </Typography>
             </Box>
-        </div>
+        </Box>
     );
 }
 

@@ -7,14 +7,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { useSignUpMutation } from "../../app/backend";
 import { next, prev, setData } from "../../app/slices/installation";
-import { setUser } from "../../app/slices/user";
 
 import { Link } from "react-router-dom";
-
-import femaleimg from "../../images/female.svg";
-import maleimg from "../../images/male.svg";
 
 const styles = {
     root: {
@@ -80,12 +75,11 @@ const offers = [
 ];
 
 function Step4() {
-    const [signUp] = useSignUpMutation();
     const { data } = useAppSelector((state) => state.installation);
     const dispatch = useAppDispatch();
 
     return (
-        <div style={styles.root}>
+        <Box sx={styles.root}>
             <Box>
                 <Typography variant="h2">
                     Great, time to set a daily goal
@@ -140,9 +134,10 @@ function Step4() {
                     <Button
                         onClick={() => {
                             if (data.goal) {
-                                signUp(data).then((res) => {
-                                    setUser(res.data);
-                                });
+                                // signUp(data).then((res) => {
+                                //     setUser(res.data);
+                                // });
+                                dispatch(next());
                             }
                         }}
                         variant="contained"
@@ -158,7 +153,7 @@ function Step4() {
                     </Link>
                 </Typography>
             </Box>
-        </div>
+        </Box>
     );
 }
 

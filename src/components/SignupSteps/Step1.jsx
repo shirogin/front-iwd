@@ -49,7 +49,7 @@ function Step1() {
     const { data } = useAppSelector((state) => state.installation);
     const dispatch = useAppDispatch();
     return (
-        <div style={styles.root}>
+        <Box sx={styles.root}>
             <Box>
                 <Typography variant="h2">What's your gender</Typography>
                 <Typography paragraph>
@@ -109,7 +109,7 @@ function Step1() {
                     </Link>
                 </Typography>
             </Box>
-        </div>
+        </Box>
     );
 }
 

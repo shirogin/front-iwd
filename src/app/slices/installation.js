@@ -5,7 +5,7 @@ const initial_state = JSON.parse(
 );
 
 const minSteps = 0;
-const maxSteps = 4;
+const maxSteps = 5;
 
 const installation = createSlice({
     name: "installation",
