@@ -70,7 +70,7 @@ const styles = {
 const offers = [
     { title: "Casual", time: "10 min / day" },
     { title: "Regular", time: "20 min / day" },
-    { title: "serious", time: "30 min / day" },
+    { title: "Serious", time: "30 min / day" },
     { title: "Intense", time: "01 hour / day" },
 ];
 
