@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initial_state = JSON.parse(
     localStorage.getItem("Dashboard") || "null"
-) || { progress: {}, history: [] };
+) || { progress: { trimester: 0, module: 0 }, history: [] };
 
 const dashboard = createSlice({
     name: "dashboard",
@@ -13,9 +13,14 @@ const dashboard = createSlice({
             localStorage.setItem("Dashboard", JSON.stringify(state));
             return state;
         },
+        setProgress: (state, action) => {
+            state.progress = action.payload ?? initial_state.progress;
+            localStorage.setItem("Dashboard", JSON.stringify(state));
+            return state;
+        },
     },
 });
 
-export const { setData } = dashboard.actions;
+export const { setData, setProgress } = dashboard.actions;
 
 export default dashboard.reducer;

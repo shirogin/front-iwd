@@ -1,5 +1,5 @@
 import logo from "../images/logo.svg";
-import { Menu, Button, MenuItem, Container, Grid } from "@mui/material";
+import { Menu, Button, MenuItem, Grid } from "@mui/material";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { chooseLanguage } from "../app/slices/language";
 import mainImage from "../images/main.png";
@@ -18,7 +18,7 @@ const Home = () => {
     return (
         <div className="Home">
             <nav>
-                <img src={logo} />{" "}
+                <img src={logo} />
                 <Button
                     id="lang-button"
                     aria-controls={open ? "lang-menu" : undefined}
@@ -35,7 +35,6 @@ const Home = () => {
                     open={open}
                     onClose={() => {
                         setAnchorEl(null);
-                        dispatch(chooseLanguage("Arabic"));
                     }}
                     MenuListProps={{
                         "aria-labelledby": "basic-button",
@@ -48,22 +47,6 @@ const Home = () => {
                         }}
                     >
                         Arabic
-                    </MenuItem>
-                    <MenuItem
-                        onClick={() => {
-                            setAnchorEl(null);
-                            dispatch(chooseLanguage("French"));
-                        }}
-                    >
-                        French
-                    </MenuItem>
-                    <MenuItem
-                        onClick={() => {
-                            setAnchorEl(null);
-                            dispatch(chooseLanguage("English"));
-                        }}
-                    >
-                        English
                     </MenuItem>
                 </Menu>
             </nav>

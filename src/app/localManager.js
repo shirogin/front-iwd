@@ -9,8 +9,8 @@ const api = createApi({
         /* Sign In / Up*/
         checkLocals: builder.mutation({
             query: ({ body }) => ({
-                url: "/signin",
-                method: "POST",
+                url: "/",
+                method: "GET",
                 body,
             }),
         }),
