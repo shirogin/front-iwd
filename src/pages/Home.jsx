@@ -83,11 +83,20 @@ const Home = () => {
                             fun) way to learn.
                         </p>
                     </Box>
-                    <Grid container item xs={12} sx={{ marginTop: "6em" }}>
+                    <Grid
+                        container
+                        item
+                        xs={12}
+                        sx={{
+                            marginTop: "6em",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                        }}
+                    >
                         <Button
                             component={Link}
                             to="/installation"
-                            id="lang-button"
                             variant="contained"
                             size="large"
                             className="main-button"
@@ -97,7 +106,6 @@ const Home = () => {
                         <Button
                             component={Link}
                             to="/signin"
-                            id="lang-button"
                             variant="outlined"
                             size="large"
                             color="secondary"
