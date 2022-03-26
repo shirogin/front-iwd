@@ -33,14 +33,14 @@
                     "elements": [
                         {
                             "id": "745zehs75",
-                            "title ": "OHM law",
+                            "title": "OHM law",
                             "type": "video",
                             "video": "https://www.youtube.com/embed/3v104cOE8z8",
                             "description": "in this chapter we will learn all about electricity in general , Electronics circuits and components"
                         },
                         {
                             "id": "745gzegs75",
-                            "title ": "OHM law",
+                            "title": "OHM law",
                             "type": "multiple choices",
                             "question": "choose the right answer what's the OHM law?",
                             "answers": ["u=r*i", "u=r^2*i", "u=i*2R"],

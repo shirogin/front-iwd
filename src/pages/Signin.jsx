@@ -59,7 +59,7 @@ const styles = {
 };
 
 function Signin() {
-    const [signIn] = useSignInMutation();
+    const [signIn, { isLoading }] = useSignInMutation();
     const { data } = useAppSelector((state) => state.installation);
     const dispatch = useAppDispatch();
 
@@ -178,6 +178,7 @@ function Signin() {
                                 });
                             }
                         }}
+                        disabled={isLoading}
                         variant="contained"
                         sx={styles.btn}
                     >

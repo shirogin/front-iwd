@@ -7,7 +7,8 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { setProgress } from "../../app/slices/dashboard";
 import { setUser } from "../../app/slices/user";
 import { useState } from "react";
-const Multi = ({ question, choices = [], correctAnswer = 0 }) => {
+const Multi = ({ question, choices = [], correctAnswer = 0, setskipable }) => {
+    const [choice, setChoice] = useState(null);
     return (
         <>
             <h3>{question}</h3>
@@ -15,8 +16,20 @@ const Multi = ({ question, choices = [], correctAnswer = 0 }) => {
                 <Button
                     key={"but" + i}
                     variant="contained"
-                    color="grey"
+                    color={
+                        choice === i
+                            ? choice === correctAnswer
+                                ? "primary"
+                                : "warning"
+                            : "grey"
+                    }
                     size="large"
+                    onClick={() =>
+                        setChoice(() => {
+                            setskipable((el) => true);
+                            return i;
+                        })
+                    }
                     className="Multi"
                 >
                     {el}
@@ -66,9 +79,11 @@ const Courses = ({ elements }) => {
     const dashboard = useAppSelector((state) => state.dashboard),
         user = useAppSelector((state) => state.user),
         dispatch = useAppDispatch();
-    const [skipable, setskipable] = useState(
-        ["video"].includes(dashboard.progress.element.type)
+    const element = elements.find(
+        (el) => user.history[user.studyLevel].indexOf(el.id) < 0
     );
+    console.log(element);
+    const [skipable, setskipable] = useState(["video"].includes(element.type));
     var lastDone = -1;
     return (
         <>
@@ -80,33 +95,23 @@ const Courses = ({ elements }) => {
                     className="Video"
                     direction="column"
                 >
-                    <h1>{dashboard.progress.element.title} </h1>
+                    <h1>{element.title} </h1>
                     {(() => {
-                        switch (dashboard.progress.element.type) {
+                        switch (element.type) {
                             case "video":
                                 return (
                                     <Video
-                                        videoLink={
-                                            dashboard.progress.element.video
-                                        }
-                                        description={
-                                            dashboard.progress.element
-                                                .description
-                                        }
+                                        videoLink={element.video}
+                                        description={element.description}
                                     />
                                 );
                             case "multiple choices":
                                 return (
                                     <Multi
-                                        question={
-                                            dashboard.progress.element.question
-                                        }
-                                        choices={
-                                            dashboard.progress.element.answers
-                                        }
-                                        correctAnswer={
-                                            dashboard.progress.element.correct
-                                        }
+                                        setskipable={setskipable}
+                                        question={element.question}
+                                        choices={element.answers}
+                                        correctAnswer={element.correct}
                                     />
                                 );
                         }
@@ -125,7 +130,6 @@ const Courses = ({ elements }) => {
                                     setProgress({
                                         ...dashboard.progress,
                                         module: null,
-                                        element: null,
                                     })
                                 );
                             }}
@@ -138,26 +142,22 @@ const Courses = ({ elements }) => {
                             color="secondary"
                             disabled={!skipable}
                             onClick={() => {
+                                console.log(element, elements);
                                 var history = JSON.parse(
                                         JSON.stringify(user.history)
                                     ),
-                                    element =
+                                    elementS =
                                         elements[
                                             elements.findIndex(
-                                                (el) =>
-                                                    dashboard.progress.element
-                                                        .id == el.id
+                                                (el) => element.id == el.id
                                             ) + 1
                                         ];
 
-                                history[user.studyLevel].push(
-                                    dashboard.progress.element.id
-                                );
+                                history[user.studyLevel].push(element.id);
                                 dispatch(
                                     setProgress({
                                         ...dashboard.progress,
-                                        element,
-                                        module: element
+                                        module: elementS
                                             ? dashboard.progress.module
                                             : null,
                                     })
