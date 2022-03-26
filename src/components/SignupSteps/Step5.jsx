@@ -30,10 +30,13 @@ const styles = {
         width: "250px",
         borderRadius: "10px",
         marginBottom: 2,
-        margin: "0 15px",
+        margin: "5px 15px",
     },
     phoneBtn: {
-        width: "40%",
+        width: {
+            sm: "40%",
+            xs: "50%",
+        },
         backgroundColor: "#70C1F2",
         color: "white",
         fontSize: "1.3rem",
@@ -44,7 +47,10 @@ const styles = {
         },
     },
     googleBtn: {
-        width: "40%",
+        width: {
+            sm: "40%",
+            xs: "50%",
+        },
         backgroundColor: "#828FED",
         color: "white",
         fontSize: "1.3rem",
@@ -70,35 +76,55 @@ function Step5() {
                     position: "absolute",
                     zIndex: 2,
                     right: 0,
-                    top: 50,
+                    bottom: 0,
                     "& img": {
-                        width: { xs: "20px" },
+                        width: {
+                            sm: "200px",
+                            xs: "100px",
+                        },
                     },
                 }}
             >
                 <img src={RuleImg} alt="rule image" />
             </Box>
-
-            <img
-                src={BookImg}
-                style={{
+            <Box
+                sx={{
                     position: "absolute",
                     zIndex: 2,
                     left: 0,
                     bottom: 120,
+                    display: {
+                        sm: "inherit",
+                        xs: "none",
+                    },
+                    "& img": {
+                        width: "200px",
+                    },
                 }}
-                alt="book image"
-            />
+            >
+                <img src={BookImg} alt="book image" />
+            </Box>
             <Box>
-                <Typography variant="h3">
+                <Typography
+                    variant="h2"
+                    sx={{
+                        fontSize: { xs: "1.5rem", sm: "3rem" },
+                    }}
+                >
                     Create an account to check on all your corses
                 </Typography>
             </Box>
             <Box
                 sx={{
-                    width: "50%",
+                    width: {
+                        sm: "50%",
+                        xs: "80%",
+                    },
                     display: "flex",
-                    flexDirection: "column",
+                    flexDirection: {
+                        sm: "column",
+                        xs: "column-reverse",
+                    },
                     justifyContent: "center",
                     alignItems: "center",
                 }}
@@ -131,7 +157,10 @@ function Step5() {
                             flexGrow: 1,
                             position: "absolute",
                             zIndex: -1,
-                            width: "40%",
+                            width: {
+                                sm: "40%",
+                                xs: "100%",
+                            },
                         }}
                     />
                     <Typography
@@ -156,14 +185,13 @@ function Step5() {
                             )
                         }
                     />
-                </Box>
-                <Box sx={{ width: "90%", marginTop: "1em" }}>
                     <TextField
                         label="Password"
                         type="password"
                         variant="outlined"
                         fullWidth
                         value={data.password}
+                        sx={{ marginTop: "1em" }}
                         onChange={(e) =>
                             dispatch(
                                 setData({ ...data, password: e.target.value })
@@ -173,7 +201,17 @@ function Step5() {
                 </Box>
             </Box>
             <Box>
-                <Box>
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: {
+                            xs: "column-reverse",
+                            sm: "row",
+                        },
+                        justifyContent: "center",
+                        alignItems: "center",
+                    }}
+                >
                     <Button
                         onClick={() => dispatch(prev())}
                         variant="contained"
@@ -198,11 +236,21 @@ function Step5() {
                 </Box>
                 <Typography
                     paragraph
-                    sx={{ fontSize: "0.8rem", color: "#257DBC", marginTop: 3 }}
+                    sx={{
+                        fontSize: "0.8rem",
+                        color: "#257DBC",
+                        marginTop: 3,
+                        display: { xs: "none", sm: "inherit" },
+                    }}
                 >
                     By clicking Sign up, I agree to the Terms and Privacy Policy
                 </Typography>
-                <Typography paragraph>
+                <Typography
+                    paragraph
+                    sx={{
+                        display: { xs: "none", sm: "inherit" },
+                    }}
+                >
                     Existing user?{" "}
                     <Link style={styles.link} to="/signin">
                         Login

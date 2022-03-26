@@ -23,22 +23,23 @@ const styles = {
         width: "250px",
         borderRadius: "10px",
         marginBottom: 2,
-        margin: "0 15px",
+        margin: "5px 15px",
     },
     genderBtn: (selected) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        color: selected ? "white" : "black",
+        // color: selected ? "white" : "black",
         width: "50%",
         height: "200px",
         justifyContent: "flex-end",
         alignItems: "center",
-        backgroundColor: selected ? "#56BCA6" : "white",
+        // backgroundColor: selected ? "#56BCA6" : "white",
         "& p": {
             fontSize: "1.5rem",
         },
         margin: "0 20px",
+        border: selected ? "2px solid #70C1F2" : "null",
     }),
     link: {
         color: "#56BCA6",
@@ -51,8 +52,21 @@ function Step1() {
     return (
         <Box sx={styles.root}>
             <Box>
-                <Typography variant="h2">What's your gender</Typography>
-                <Typography paragraph>
+                <Typography
+                    variant="h2"
+                    sx={{
+                        fontSize: { xs: "1.5rem", sm: "3.75rem" },
+                    }}
+                >
+                    What's your gender
+                </Typography>
+                <Typography
+                    paragraph
+                    sx={{
+                        width: { xs: "80%", sm: "100%" },
+                        display: { xs: "none", sm: "inherit" },
+                    }}
+                >
                     This will help us to know our students more
                 </Typography>
             </Box>
@@ -81,7 +95,15 @@ function Step1() {
                 </Paper>
             </Box>
             <Box>
-                <Box>
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: {
+                            xs: "column-reverse",
+                            sm: "row",
+                        },
+                    }}
+                >
                     <Button
                         onClick={() => dispatch(prev())}
                         variant="contained"
