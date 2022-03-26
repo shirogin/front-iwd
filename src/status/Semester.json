@@ -2,27 +2,77 @@
     "H3": [
         {
             "id": 1,
-            "module": {
-                "name": "Math",
-                "image": "",
-                "description": "in this course you will learn all about expentiel function and logaritmics ones ,probabilities ,squencesand complex numbers",
-                "chapters": [
-                    {
-                        "title": "Exponential function",
-                        "elements": [
-                            {
-                                "type": "video",
-                                "video": "https://www.youtube.com/user/noureddine2013",
-                                "description": "in this chapter will know what's an expo function ,how to study in 'R'and how to derivate it & integrate it "
-                            },
-                            {
-                                "type": "multiple choices",
-                                "question": "what's the derivate of 'e^x'?",
-                                "answer": ["x*e^x", "-e^x", "e^x"]
-                            }
-                        ]
-                    }
-                ]
+            "modules": {
+                "1": {
+                    "name": "Mathematics",
+                    "image": "https://res.cloudinary.com/shirogin/image/upload/v1648238772/lwd/math_1_vcsids.png",
+                    "description": "in this course you will learn all about Exponential function and logarithmic ones ,probabilities ,sequences, complex numbers",
+                    "elements": [
+                        {
+                            "id": "74575",
+                            "title": "Exponential function",
+                            "type": "video",
+                            "video": "https://www.youtube.com/embed/_usD_pP7B5A",
+                            "description": "in this chapter will know what's about expo function ,how to study in 'R'and how to derivate it & integrate it "
+                        },
+                        {
+                            "id": "74zsdhs575",
+                            "title": "Exponential function",
+                            "type": "multiple choices",
+                            "question": "what's the derivate of 'e^x'?",
+                            "answers": ["x*e^x", "-e^x", "e^x"],
+                            "correct": 2
+                        }
+                    ]
+                },
+                "2": {
+                    "name": "physics",
+                    "image": "https://res.cloudinary.com/shirogin/image/upload/v1648238765/lwd/physics_1_liwtlc.png",
+                    "description": "in this course you will learn all about electricity ,dynamics,chemistry and mechanics ",
+
+                    "elements": [
+                        {
+                            "id": "745zehs75",
+                            "title ": "OHM law",
+                            "type": "video",
+                            "video": "https://www.youtube.com/embed/3v104cOE8z8",
+                            "description": "in this chapter we will learn all about electricity in general , Electronics circuits and components"
+                        },
+                        {
+                            "id": "745gzegs75",
+                            "title ": "OHM law",
+                            "type": "multiple choices",
+                            "question": "choose the right answer what's the OHM law?",
+                            "answers": ["u=r*i", "u=r^2*i", "u=i*2R"],
+                            "correct": 0
+                        }
+                    ]
+                },
+                "3": {
+                    "image": "https://res.cloudinary.com/shirogin/image/upload/v1648238761/lwd/dna_1_hn5tfb.png",
+                    "name": "Science",
+                    "elements": [
+                        {
+                            "id": "74fsd575",
+                            "title": "algerian revolution",
+                            "type": "video",
+                            "video": "https://www.youtube.com/embed/_usD_pP7B5A",
+                            "description": "in this chapter we will learn about the algerian revolution and all the steps that this revolution have passed"
+                        },
+                        {
+                            "id": "7fqahg4575",
+                            "title": "algerian revolution",
+                            "type": "multiple choices",
+                            "question": "choose the right answer: when is the Algerian independency day",
+                            "answers": [
+                                "19 march 1962",
+                                "5 july 1962",
+                                "1 november 1954"
+                            ],
+                            "correct": 1
+                        }
+                    ]
+                }
             }
         }
     ]

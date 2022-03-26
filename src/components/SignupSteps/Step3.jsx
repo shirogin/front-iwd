@@ -77,7 +77,7 @@ function Step3() {
                                 setData({
                                     ...data,
                                     year: idx + 1,
-                                    level: `${data.etab}${idx + 1}`,
+                                    studyLevel: `${data.etab}${idx + 1}`,
                                 })
                             )
                         }

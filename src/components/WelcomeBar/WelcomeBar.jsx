@@ -14,9 +14,7 @@ const WelcomeBar = () => {
     };
     return (
         <div className="welcomeNav">
-            <h1>
-                Welcome {user != null ?? user.firstName + " " + user.lastName}
-            </h1>
+            <h1>Welcome {user?.firstName + " " + user?.lastName}</h1>
             <Button
                 id="lang-button"
                 aria-controls={open ? "lang-menu" : undefined}
