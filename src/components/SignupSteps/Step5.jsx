@@ -65,11 +65,20 @@ function Step5() {
 
     return (
         <Box sx={styles.root}>
-            <img
-                src={RuleImg}
-                style={{ position: "absolute", zIndex: 2, right: 0, top: 50 }}
-                alt="rule image"
-            />
+            <Box
+                sx={{
+                    position: "absolute",
+                    zIndex: 2,
+                    right: 0,
+                    top: 50,
+                    "& img": {
+                        width: { xs: "20px" },
+                    },
+                }}
+            >
+                <img src={RuleImg} alt="rule image" />
+            </Box>
+
             <img
                 src={BookImg}
                 style={{
@@ -84,9 +93,6 @@ function Step5() {
                 <Typography variant="h3">
                     Create an account to check on all your corses
                 </Typography>
-                {/* <Typography paragraph>
-                    This will help us to know our students more
-                </Typography> */}
             </Box>
             <Box
                 sx={{
