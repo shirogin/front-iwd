@@ -20,26 +20,40 @@ const styles = {
         width: "250px",
         borderRadius: "10px",
         marginBottom: 2,
-        margin: "0 15px",
+        margin: "5px 15px",
     },
     yearBtn: (selected) => ({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        color: selected ? "white" : "black",
         border: "1px solid black",
-        fontSize: "4rem",
+        fontSize: {
+            sm: "4rem",
+            xs: "2rem",
+        },
         fontWeight: "bold",
-        width: "200px",
-        height: "200px",
+        width: {
+            sm: "200px",
+            xs: "100px",
+        },
+        height: {
+            sm: "200px",
+            xs: "100px",
+        },
         borderRadius: "30px",
-        backgroundColor: selected ? "#56BCA6" : "white",
         "& p": {
-            fontSize: "4rem",
+            fontSize: {
+                sm: "4rem",
+                xs: "2rem",
+            },
             fontWeight: "bold",
         },
-        margin: "0 20px",
+        margin: {
+            sm: "0 20px",
+            xs: "20px 0",
+        },
+        border: selected ? "2px solid #70C1F2" : "null",
     }),
     link: {
         color: "#56BCA6",
@@ -56,8 +70,21 @@ function Step3() {
     return (
         <Box sx={styles.root}>
             <Box>
-                <Typography variant="h2">What is your study level</Typography>
-                <Typography paragraph>
+                <Typography
+                    variant="h2"
+                    sx={{
+                        fontSize: { xs: "1.5rem", sm: "3.75rem" },
+                    }}
+                >
+                    What is your study level
+                </Typography>
+                <Typography
+                    paragraph
+                    sx={{
+                        width: { xs: "80%", sm: "100%" },
+                        display: { xs: "none", sm: "inherit" },
+                    }}
+                >
                     This will help us to know our students more
                 </Typography>
             </Box>
@@ -66,10 +93,15 @@ function Step3() {
                     display: "flex",
                     justifyContent: "space-evenly",
                     alignItems: "center",
+                    flexWrap: {
+                        xs: "wrap",
+                        sm: "no-wrap",
+                    },
                 }}
             >
                 {arr.map((val, idx) => (
-                    <Box
+                    <Paper
+                        elevation={8}
                         sx={styles.yearBtn(data.year === idx + 1)}
                         key={idx}
                         onClick={() =>
@@ -85,21 +117,26 @@ function Step3() {
                         <Typography>
                             <span
                                 style={{
-                                    color:
-                                        data.year === idx + 1
-                                            ? "white"
-                                            : "#56BCA6",
+                                    color: "#56BCA6",
                                 }}
                             >
                                 {idx + 1}
                             </span>
                         </Typography>
                         <Typography>Year</Typography>
-                    </Box>
+                    </Paper>
                 ))}
             </Box>
             <Box>
-                <Box>
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: {
+                            xs: "column-reverse",
+                            sm: "row",
+                        },
+                    }}
+                >
                     <Button
                         onClick={() => dispatch(prev())}
                         variant="contained"

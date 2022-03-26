@@ -18,7 +18,7 @@ const styles = {
         width: "250px",
         borderRadius: "10px",
         marginBottom: 2,
-        margin: "0 15px",
+        margin: "5px 15px",
     },
     genderBtn: (selected) => ({
         display: "flex",
@@ -50,9 +50,29 @@ function Step0() {
 
     return (
         <Box sx={styles.root}>
-            <Box>
-                <Typography variant="h2">Tell us more about you</Typography>
-                <Typography paragraph>
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "column",
+                }}
+            >
+                <Typography
+                    variant="h2"
+                    sx={{
+                        fontSize: { xs: "1.5rem", sm: "3.75rem" },
+                    }}
+                >
+                    Tell us more about you.
+                </Typography>
+                <Typography
+                    paragraph
+                    sx={{
+                        width: { xs: "80%", sm: "100%" },
+                        display: { xs: "none", sm: "inherit" },
+                    }}
+                >
                     This will help us to know our students more
                 </Typography>
             </Box>
@@ -62,6 +82,10 @@ function Step0() {
                     justifyContent: "space-evenly",
                     alignItems: "center",
                     width: "100%",
+                    flexDirection: {
+                        xs: "column",
+                        sm: "row",
+                    },
                 }}
             >
                 <Box
@@ -70,12 +94,17 @@ function Step0() {
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "space-evenly",
+                        marginBottom: { xs: 2, sm: 0 },
+                        width: { sm: "inherit", xs: "100%" },
                     }}
                 >
                     <TextField
                         label="First Name"
                         variant="standard"
-                        sx={{ marginBottom: 2 }}
+                        sx={{
+                            marginBottom: 2,
+                            width: { sm: "inherit", xs: "100%" },
+                        }}
                         value={data.firstName}
                         onChange={(e) =>
                             dispatch(
@@ -86,7 +115,10 @@ function Step0() {
                     <TextField
                         label="Last Name"
                         variant="standard"
-                        sx={{ marginTop: 2 }}
+                        sx={{
+                            marginTop: 2,
+                            width: { sm: "inherit", xs: "100%" },
+                        }}
                         value={data.lastName}
                         onChange={(e) =>
                             dispatch(
@@ -95,19 +127,31 @@ function Step0() {
                         }
                     />
                 </Box>
-                <Divider orientation="vertical" />
+                <Divider
+                    orientation="vertical"
+                    sx={{
+                        display: { xs: "none", sm: "inherit" },
+                    }}
+                />
                 <Box
                     sx={{
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
+                        marginTop: { sm: 0, xs: 4 },
+                        width: { sm: "inherit", xs: "100%" },
                     }}
                 >
                     <TextField
                         label="Birthday"
                         type="date"
                         defaultValue="2017-05-24"
-                        sx={{ width: 220 }}
+                        sx={{
+                            width: {
+                                sm: 220,
+                                xs: "100%",
+                            },
+                        }}
                         InputLabelProps={{
                             shrink: true,
                         }}

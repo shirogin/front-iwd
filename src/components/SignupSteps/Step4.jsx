@@ -1,10 +1,7 @@
 import React from "react";
 
 import { Typography } from "@mui/material";
-import { Button, Box, Divider } from "@mui/material";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
+import { Button, Box, Paper } from "@mui/material";
 
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { next, prev, setData } from "../../app/slices/installation";
@@ -25,35 +22,24 @@ const styles = {
         width: "250px",
         borderRadius: "10px",
         marginBottom: 2,
-        margin: "0 15px",
+        margin: "5px 15px",
     },
     list: {
-        border: "1px solid black",
-        borderRadius: "30px",
-        width: "50%",
-        padding: 0,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        width: {
+            sm: "50%",
+            xs: "80%",
+        },
     },
-    listItem: (selected, first, last) => ({
-        backgroundColor: selected ? "#56BCA6" : "white",
-        borderTopLeftRadius: first ? "30px" : 0,
-        borderTopRightRadius: first ? "30px" : 0,
-        borderBottomLeftRadius: last ? "30px" : 0,
-        borderBottomRightRadius: last ? "30px" : 0,
-        "&:hover": {
-            color: "black",
-        },
-    }),
-    ListItemText: (selected) => ({
+    listItem: (selected) => ({
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        height: "50px",
         width: "100%",
-        color: selected ? "white" : "black",
-        "&:hover": {
-            color: "black",
-        },
-        "& span": {
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-        },
         "& .title": {
             fontWeight: "bold",
         },
@@ -61,6 +47,9 @@ const styles = {
             fontWeight: "bold",
             opacity: "0.6",
         },
+        margin: "10px 0",
+        padding: "0 30px",
+        border: selected ? "2px solid #70C1F2" : "null",
     }),
     link: {
         color: "#56BCA6",
@@ -81,48 +70,49 @@ function Step4() {
     return (
         <Box sx={styles.root}>
             <Box>
-                <Typography variant="h2">
+                <Typography
+                    variant="h2"
+                    sx={{
+                        fontSize: { xs: "1.5rem", sm: "3.75rem" },
+                    }}
+                >
                     Great, time to set a daily goal
                 </Typography>
-                <Typography paragraph>
+                <Typography
+                    paragraph
+                    sx={{
+                        width: { xs: "80%", sm: "100%" },
+                        display: { xs: "none", sm: "inherit" },
+                    }}
+                >
                     This will help us to know our students more
                 </Typography>
             </Box>
-            <List sx={styles.list}>
+            <Box sx={styles.list}>
                 {offers.map((offer, i) => (
-                    <React.Fragment key={i}>
-                        <ListItem
-                            button
-                            sx={styles.listItem(
-                                data.goal === offer.title,
-                                i === 0,
-                                i === offers.length - 1
-                            )}
-                            onClick={() =>
-                                dispatch(
-                                    setData({ ...data, goal: offer.title })
-                                )
-                            }
-                        >
-                            <ListItemText
-                                sx={styles.ListItemText(
-                                    data.goal === offer.title
-                                )}
-                            >
-                                <Typography className="title">
-                                    {offer.title}
-                                </Typography>
-                                <Typography className="time">
-                                    {offer.time}
-                                </Typography>
-                            </ListItemText>
-                        </ListItem>
-                        {i !== offers.length - 1 && <Divider />}
-                    </React.Fragment>
+                    <Paper
+                        key={i}
+                        button
+                        sx={styles.listItem(data.goal === offer.title)}
+                        onClick={() =>
+                            dispatch(setData({ ...data, goal: offer.title }))
+                        }
+                    >
+                        <Typography className="title">{offer.title}</Typography>
+                        <Typography className="time">{offer.time}</Typography>
+                    </Paper>
                 ))}
-            </List>
+            </Box>
             <Box>
-                <Box>
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: {
+                            xs: "column-reverse",
+                            sm: "row",
+                        },
+                    }}
+                >
                     <Button
                         onClick={() => dispatch(prev())}
                         variant="contained"
@@ -134,9 +124,6 @@ function Step4() {
                     <Button
                         onClick={() => {
                             if (data.goal) {
-                                // signUp(data).then((res) => {
-                                //     setUser(res.data);
-                                // });
                                 dispatch(next());
                             }
                         }}
