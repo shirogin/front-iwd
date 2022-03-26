@@ -55,7 +55,7 @@ function Step1() {
                 <Typography
                     variant="h2"
                     sx={{
-                        fontSize: { xs: "1.5rem", sm: "3.75rem" },
+                        fontSize: { xs: "1.5rem", md: "3.75rem" },
                     }}
                 >
                     What's your gender
@@ -63,8 +63,8 @@ function Step1() {
                 <Typography
                     paragraph
                     sx={{
-                        width: { xs: "80%", sm: "100%" },
-                        display: { xs: "none", sm: "inherit" },
+                        width: { xs: "80%", md: "100%" },
+                        display: { xs: "none", md: "inherit" },
                     }}
                 >
                     This will help us to know our students more
@@ -100,7 +100,7 @@ function Step1() {
                         display: "flex",
                         flexDirection: {
                             xs: "column-reverse",
-                            sm: "row",
+                            md: "row",
                         },
                     }}
                 >

@@ -34,7 +34,7 @@ const styles = {
     },
     phoneBtn: {
         width: {
-            sm: "40%",
+            md: "40%",
             xs: "50%",
         },
         backgroundColor: "#70C1F2",
@@ -48,7 +48,7 @@ const styles = {
     },
     googleBtn: {
         width: {
-            sm: "40%",
+            md: "40%",
             xs: "50%",
         },
         backgroundColor: "#828FED",
@@ -79,7 +79,7 @@ function Step5() {
                     bottom: 0,
                     "& img": {
                         width: {
-                            sm: "200px",
+                            md: "200px",
                             xs: "100px",
                         },
                     },
@@ -94,7 +94,7 @@ function Step5() {
                     left: 0,
                     bottom: 120,
                     display: {
-                        sm: "inherit",
+                        md: "inherit",
                         xs: "none",
                     },
                     "& img": {
@@ -108,7 +108,7 @@ function Step5() {
                 <Typography
                     variant="h2"
                     sx={{
-                        fontSize: { xs: "1.5rem", sm: "3rem" },
+                        fontSize: { xs: "1.5rem", md: "3rem" },
                     }}
                 >
                     Create an account to check on all your corses
@@ -117,12 +117,12 @@ function Step5() {
             <Box
                 sx={{
                     width: {
-                        sm: "50%",
+                        md: "50%",
                         xs: "80%",
                     },
                     display: "flex",
                     flexDirection: {
-                        sm: "column",
+                        md: "column",
                         xs: "column-reverse",
                     },
                     justifyContent: "center",
@@ -158,7 +158,7 @@ function Step5() {
                             position: "absolute",
                             zIndex: -1,
                             width: {
-                                sm: "40%",
+                                md: "40%",
                                 xs: "100%",
                             },
                         }}
@@ -206,7 +206,7 @@ function Step5() {
                         display: "flex",
                         flexDirection: {
                             xs: "column-reverse",
-                            sm: "row",
+                            md: "row",
                         },
                         justifyContent: "center",
                         alignItems: "center",
@@ -240,7 +240,7 @@ function Step5() {
                         fontSize: "0.8rem",
                         color: "#257DBC",
                         marginTop: 3,
-                        display: { xs: "none", sm: "inherit" },
+                        display: { xs: "none", md: "inherit" },
                     }}
                 >
                     By clicking Sign up, I agree to the Terms and Privacy Policy
@@ -248,7 +248,7 @@ function Step5() {
                 <Typography
                     paragraph
                     sx={{
-                        display: { xs: "none", sm: "inherit" },
+                        display: { xs: "none", md: "inherit" },
                     }}
                 >
                     Existing user?{" "}

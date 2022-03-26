@@ -33,17 +33,17 @@ const styles = {
         borderRadius: "20px",
         "& p": {
             fontSize: {
-                sm: "1.5rem",
+                md: "1.5rem",
                 xs: "1.1rem",
             },
         },
         "& span": {
             fontSize: {
-                sm: "3rem",
+                md: "3rem",
                 xs: "2.2rem",
             },
             fontWeight: {
-                sm: 300,
+                md: 300,
                 xs: 400,
             },
         },
@@ -65,7 +65,7 @@ function Step2() {
                 <Typography
                     variant="h2"
                     sx={{
-                        fontSize: { xs: "1.5rem", sm: "3.75rem" },
+                        fontSize: { xs: "1.5rem", md: "3.75rem" },
                     }}
                 >
                     What is your study level
@@ -73,8 +73,8 @@ function Step2() {
                 <Typography
                     paragraph
                     sx={{
-                        width: { xs: "80%", sm: "100%" },
-                        display: { xs: "none", sm: "inherit" },
+                        width: { xs: "80%", md: "100%" },
+                        display: { xs: "none", md: "inherit" },
                     }}
                 >
                     This will help us to know our students more
@@ -87,7 +87,7 @@ function Step2() {
                     justifyContent: "space-evenly",
                     alignItems: "center",
                     width: {
-                        sm: "50%",
+                        md: "50%",
                         xs: "80%",
                     },
                 }}
@@ -129,7 +129,7 @@ function Step2() {
                         display: "flex",
                         flexDirection: {
                             xs: "column-reverse",
-                            sm: "row",
+                            md: "row",
                         },
                     }}
                 >

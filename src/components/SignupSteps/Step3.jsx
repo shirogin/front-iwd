@@ -29,30 +29,35 @@ const styles = {
         justifyContent: "center",
         border: "1px solid black",
         fontSize: {
-            sm: "4rem",
+            md: "4rem",
             xs: "2rem",
         },
         fontWeight: "bold",
         width: {
-            sm: "200px",
+            md: "200px",
             xs: "100px",
         },
         height: {
-            sm: "200px",
+            md: "200px",
             xs: "100px",
         },
         borderRadius: "30px",
         "& p": {
             fontSize: {
-                sm: "4rem",
+                md: "4rem",
                 xs: "2rem",
             },
             fontWeight: "bold",
         },
-        margin: {
-            sm: "0 20px",
-            xs: "20px 0",
-        },
+        // "& .MuiPaper-root": {
+        //     margin: "20px",
+        // },
+        // margin: {
+        //     md: "20px",
+        //     xs: "20px",
+        // },
+        margin: "20px",
+
         border: selected ? "2px solid #70C1F2" : "null",
     }),
     link: {
@@ -73,7 +78,7 @@ function Step3() {
                 <Typography
                     variant="h2"
                     sx={{
-                        fontSize: { xs: "1.5rem", sm: "3.75rem" },
+                        fontSize: { xs: "1.5rem", md: "3.75rem" },
                     }}
                 >
                     What is your study level
@@ -81,8 +86,8 @@ function Step3() {
                 <Typography
                     paragraph
                     sx={{
-                        width: { xs: "80%", sm: "100%" },
-                        display: { xs: "none", sm: "inherit" },
+                        width: { xs: "80%", md: "100%" },
+                        display: { xs: "none", md: "inherit" },
                     }}
                 >
                     This will help us to know our students more
@@ -95,7 +100,7 @@ function Step3() {
                     alignItems: "center",
                     flexWrap: {
                         xs: "wrap",
-                        sm: "no-wrap",
+                        md: "no-wrap",
                     },
                 }}
             >
@@ -133,7 +138,7 @@ function Step3() {
                         display: "flex",
                         flexDirection: {
                             xs: "column-reverse",
-                            sm: "row",
+                            md: "row",
                         },
                     }}
                 >

@@ -54,14 +54,14 @@ function Step0() {
                 sx={{
                     display: "flex",
                     justifyContent: "center",
-                    alignItems: "center",
+                    alignItems: "center     ",
                     flexDirection: "column",
                 }}
             >
                 <Typography
                     variant="h2"
                     sx={{
-                        fontSize: { xs: "1.5rem", sm: "3.75rem" },
+                        fontSize: { xs: "1.5rem", md: "3.75rem" },
                     }}
                 >
                     Tell us more about you.
@@ -69,8 +69,8 @@ function Step0() {
                 <Typography
                     paragraph
                     sx={{
-                        width: { xs: "80%", sm: "100%" },
-                        display: { xs: "none", sm: "inherit" },
+                        width: { xs: "80%", md: "inherit" },
+                        display: { xs: "none", md: "inherit" },
                     }}
                 >
                     This will help us to know our students more
@@ -81,10 +81,10 @@ function Step0() {
                     display: "flex",
                     justifyContent: "space-evenly",
                     alignItems: "center",
-                    width: "100%",
+                    width: "80%",
                     flexDirection: {
                         xs: "column",
-                        sm: "row",
+                        md: "row",
                     },
                 }}
             >
@@ -94,8 +94,8 @@ function Step0() {
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "space-evenly",
-                        marginBottom: { xs: 2, sm: 0 },
-                        width: { sm: "inherit", xs: "100%" },
+                        marginBottom: { xs: 2, md: 0 },
+                        width: { md: "inherit", xs: "100%" },
                     }}
                 >
                     <TextField
@@ -103,7 +103,7 @@ function Step0() {
                         variant="standard"
                         sx={{
                             marginBottom: 2,
-                            width: { sm: "inherit", xs: "100%" },
+                            width: { md: "inherit", xs: "100%" },
                         }}
                         value={data.firstName}
                         onChange={(e) =>
@@ -117,7 +117,7 @@ function Step0() {
                         variant="standard"
                         sx={{
                             marginTop: 2,
-                            width: { sm: "inherit", xs: "100%" },
+                            width: { md: "inherit", xs: "100%" },
                         }}
                         value={data.lastName}
                         onChange={(e) =>
@@ -130,7 +130,7 @@ function Step0() {
                 <Divider
                     orientation="vertical"
                     sx={{
-                        display: { xs: "none", sm: "inherit" },
+                        display: { xs: "none", md: "inherit" },
                     }}
                 />
                 <Box
@@ -138,17 +138,16 @@ function Step0() {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        marginTop: { sm: 0, xs: 4 },
-                        width: { sm: "inherit", xs: "100%" },
+                        marginTop: { md: 0, xs: 4 },
+                        width: { md: "inherit", xs: "100%" },
                     }}
                 >
                     <TextField
                         label="Birthday"
                         type="date"
-                        defaultValue="2017-05-24"
                         sx={{
                             width: {
-                                sm: 220,
+                                md: 220,
                                 xs: "100%",
                             },
                         }}
