@@ -1,4 +1,5 @@
 import { Container, Menu, Button, MenuItem } from "@mui/material";
+import { Link } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
@@ -43,21 +44,11 @@ const WelcomeBar = () => {
                         setAnchorEl(null);
                     }}
                 >
-                    Arabic
+                    {user.firstName + " " + user.lastName}
                 </MenuItem>
-                <MenuItem
-                    onClick={() => {
-                        setAnchorEl(null);
-                    }}
-                >
-                    French
-                </MenuItem>
-                <MenuItem
-                    onClick={() => {
-                        setAnchorEl(null);
-                    }}
-                >
-                    English
+
+                <MenuItem component={Link} to="/logout">
+                    logout
                 </MenuItem>
             </Menu>
         </div>

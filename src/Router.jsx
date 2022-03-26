@@ -1,8 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useLogOutMutation } from "./app/backend";
-
 import Logout from "./components/logout";
-import { useAppSelector, useAppDispatch } from "./app/hooks";
+import { useAppSelector } from "./app/hooks";
 import { Suspense, lazy, useEffect } from "react";
 
 const Home = lazy(() => import("./pages/Home")),
@@ -14,9 +12,8 @@ function Loader() {
 }
 
 function Router() {
-    const [logout] = useLogOutMutation(),
-        user = useAppSelector((state) => state.user),
-        dispatch = useAppDispatch();
+    const user = useAppSelector((state) => state.user);
+
     useEffect(() => {
         const tag = window.location.href.match(/#\w+/);
         if (tag)
@@ -24,6 +21,7 @@ function Router() {
                 .querySelector(tag[0])
                 ?.scrollIntoView({ behavior: "smooth" });
     });
+    console.log(user);
     return (
         <Suspense fallback={<Loader />}>
             <BrowserRouter>
@@ -32,23 +30,32 @@ function Router() {
                         path="/"
                         element={user ? <Navigate to="/dashboard" /> : <Home />}
                     />
-                    <Route path="installation" element={<Installation />} />
-                    <Route path="dashboard" element={<Dashboard />}>
+                    <Route
+                        path="/"
+                        element={user ? <Navigate to="/dashboard" /> : <Home />}
+                    />
+                    <Route
+                        path="installation"
+                        element={
+                            user ? (
+                                <Navigate to="/dashboard" />
+                            ) : (
+                                <Installation />
+                            )
+                        }
+                    />
+                    <Route
+                        path="dashboard"
+                        element={
+                            user ? <Dashboard /> : <Navigate to="/signin" />
+                        }
+                    >
                         <Route path="progress" element={<Progress />} />
                         <Route path="search" element={<Progress />} />
                         <Route path="bucket" element={<Progress />} />
                         <Route path="settings" element={<Progress />} />
                     </Route>
-                    <Route
-                        path="logout"
-                        element={
-                            <Logout
-                                user={user}
-                                dispatch={dispatch}
-                                logout={logout}
-                            />
-                        }
-                    />
+                    <Route path="logout" element={<Logout />} />
                 </Routes>
             </BrowserRouter>
         </Suspense>

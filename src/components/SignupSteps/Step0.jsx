@@ -2,7 +2,7 @@ import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { next, setData } from "../../app/slices/installation";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
-import { Button, Box, Paper, Divider } from "@mui/material";
+import { Button, Box, Divider } from "@mui/material";
 
 const styles = {
     root: {

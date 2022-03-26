@@ -1,5 +1,6 @@
-.Progress .row{
+.Progress .row {
     display: flex;
     flex-wrap: wrap;
+    align-items: self-start;
     justify-content: space-between;
 }

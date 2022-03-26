@@ -132,6 +132,20 @@ function Step5() {
                         }
                     />
                 </Box>
+                <Box sx={{ width: "90%", marginTop: "1em" }}>
+                    <TextField
+                        label="Password"
+                        type="password"
+                        variant="outlined"
+                        fullWidth
+                        value={data.password}
+                        onChange={(e) =>
+                            dispatch(
+                                setData({ ...data, password: e.target.value })
+                            )
+                        }
+                    />
+                </Box>
             </Box>
             <Box>
                 <Box>
@@ -146,8 +160,8 @@ function Step5() {
                     <Button
                         onClick={() => {
                             if (data.goal) {
-                                signUp(data).then((res) => {
-                                    setUser(res.data);
+                                signUp({ body: data }).then((res) => {
+                                    dispatch(setUser(res.data));
                                 });
                             }
                         }}

@@ -65,20 +65,16 @@ function Step1() {
             >
                 <Paper
                     elevation={8}
-                    sx={styles.genderBtn(data.gender === "female")}
-                    onClick={() =>
-                        dispatch(setData({ ...data, gender: "female" }))
-                    }
+                    sx={styles.genderBtn(data.gender === "f")}
+                    onClick={() => dispatch(setData({ ...data, gender: "f" }))}
                 >
                     <img src={femaleimg} style={{ width: "50%" }} />
                     <Typography paragraph>Female</Typography>
                 </Paper>
                 <Paper
                     elevation={8}
-                    sx={styles.genderBtn(data.gender === "male")}
-                    onClick={() =>
-                        dispatch(setData({ ...data, gender: "male" }))
-                    }
+                    sx={styles.genderBtn(data.gender === "m")}
+                    onClick={() => dispatch(setData({ ...data, gender: "m" }))}
                 >
                     <img src={maleimg} style={{ width: "50%" }} />
                     <Typography paragraph>Male</Typography>

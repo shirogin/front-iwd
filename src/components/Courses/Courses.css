@@ -1,0 +1,56 @@
+.frame {
+    border-radius: 25px;
+}
+.progressBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    min-height: 7em;
+    justify-content: center;
+    border-radius: 30px;
+    box-shadow: 1px 1px 6px -2px black;
+    margin-bottom: 1em;
+    padding: 1em 0;
+}
+
+.progressList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.progressBar > .SLoader .bar {
+    background-color: var(--secondary);
+    height: 100%;
+}
+.progressBar > .SLoader {
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #cacaca;
+    height: 0.5em;
+    width: 80%;
+    margin-bottom: 1em;
+
+}
+.progressBar .element{
+    padding: 0.5em;
+    display: flex;
+    width: 80%;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-bottom: 0.5em;
+}
+.progressBar .element svg{
+    margin-right: 1em;
+}
+.Video p{
+    font-weight: 600;
+    
+}
+.doneElement{
+    color: var(--primary);
+}
+.currentElement{
+    color: grey;
+}
