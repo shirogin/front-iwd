@@ -2,7 +2,7 @@ import "./Bucket.css";
 import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { setProgress } from "../../app/slices/dashboard";
 import { setUser } from "../../app/slices/user";
-import CloseIcon from "@mui/icons-material/Close";
+import { Button } from "@mui/material";
 import PauseCircleFilledIcon from "@mui/icons-material/PauseCircleFilled";
 import StopCircleIcon from "@mui/icons-material/StopCircle";
 import NotStartedIcon from "@mui/icons-material/NotStarted";
@@ -13,8 +13,12 @@ const Downloading = ({ module, progress, paused }) => {
             <div className="slider">
                 <div className="bar" style={{ width: progress + "%" }}></div>
             </div>
-            {paused ? <NotStartedIcon /> : <PauseCircleFilledIcon />}
-            <StopCircleIcon />
+            <Button>
+                {paused ? <NotStartedIcon /> : <PauseCircleFilledIcon />}
+            </Button>
+            <Button>
+                <StopCircleIcon />
+            </Button>
         </div>
     );
 };
@@ -45,10 +49,11 @@ const Bucket = () => {
             <div className="installed">
                 <h3>Installed</h3>
                 <p>There is no pack yet</p>
-                <div></div>
+                <Installed module={"Math"} progress={50} />
             </div>
             <div className="install">
                 <h3>Install Offline</h3>
+                <input type="file" />
             </div>
         </div>
     );
