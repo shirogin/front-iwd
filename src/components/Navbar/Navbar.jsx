@@ -23,7 +23,7 @@ const Navbar = () => {
             <ul>
                 <NavElement
                     Element={<BeenhereIcon color="secondary" />}
-                    link="/dashboard/progress"
+                    link="/dashboard/"
                 />
                 <NavElement
                     Element={<SearchIcon color="secondary" />}

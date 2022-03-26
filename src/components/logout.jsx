@@ -5,13 +5,12 @@ import { useLogOutMutation } from "../app/backend";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 
 export default function Logout() {
-    const [logout] = useLogOutMutation(),
+    const [logout, { isLoading }] = useLogOutMutation(),
         user = useAppSelector((state) => state.user),
         dispatch = useAppDispatch();
-    if (user)
+    if (user && !isLoading)
         logout()
             .then((res) => {
-                console.log(res);
                 if (res.hasOwnProperty("data")) {
                     Notify(dispatch, {
                         title: "Logged out",

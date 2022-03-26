@@ -9,7 +9,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { useSignInMutation } from "../app/backend";
 import { prev, setData } from "../app/slices/installation";
-import { setUser } from "../app/slices/user";
+import { setUser, removeUser } from "../app/slices/user";
 
 import { Link } from "react-router-dom";
 
@@ -172,8 +172,9 @@ function Signin() {
                         onClick={() => {
                             if (data.email && data.password) {
                                 signIn({ body: data }).then((res) => {
-                                    // dispatch(setUser(res.data));
-                                    console.log(res.data);
+                                    if (res.data) dispatch(setUser(res.data));
+                                    else dispatch(removeUser(res.data));
+                                    console.log(res);
                                 });
                             }
                         }}
@@ -183,16 +184,10 @@ function Signin() {
                         Sign in
                     </Button>
                 </Box>
-                <Typography
-                    paragraph
-                    sx={{ fontSize: "0.8rem", color: "#257DBC", marginTop: 3 }}
-                >
-                    By clicking Sign up, I agree to the Terms and Privacy Policy
-                </Typography>
                 <Typography paragraph>
-                    Existing user?{" "}
-                    <Link style={styles.link} to="/signin">
-                        Login
+                    don't have an account yet?
+                    <Link style={styles.link} to="/installation">
+                        register
                     </Link>
                 </Typography>
             </Box>

@@ -22,15 +22,10 @@ function Router() {
                 .querySelector(tag[0])
                 ?.scrollIntoView({ behavior: "smooth" });
     });
-    console.log(user);
     return (
         <Suspense fallback={<Loader />}>
             <BrowserRouter>
                 <Routes>
-                    <Route
-                        path="/"
-                        element={user ? <Navigate to="/dashboard" /> : <Home />}
-                    />
                     <Route
                         path="/"
                         element={user ? <Navigate to="/dashboard" /> : <Home />}
@@ -57,7 +52,7 @@ function Router() {
                             user ? <Dashboard /> : <Navigate to="/signin" />
                         }
                     >
-                        <Route path="progress" element={<Progress />} />
+                        <Route path="/dashboard/" element={<Progress />} />
                         <Route path="search" element={<Progress />} />
                         <Route path="bucket" element={<Progress />} />
                         <Route path="settings" element={<Progress />} />
