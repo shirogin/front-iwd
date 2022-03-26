@@ -78,9 +78,10 @@ const Home = () => {
                     >
                         <h2>engage me and i shall learn</h2>
                         <p>
-                            3ab9ri replaces lecture videos with hands-on,
-                            interactive problem solving. It’s a better (and more
-                            fun) way to learn.
+                            A9RA is a free platform that aim to help in the
+                            improvement of the Algerian education by providing
+                            accessible , interactable and smart courses with
+                            progress tracking, and programs discussions.
                         </p>
                     </Box>
                     <Grid
