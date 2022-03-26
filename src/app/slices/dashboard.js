@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initial_state = JSON.parse(
     localStorage.getItem("Dashboard") || "null"
-) || { progress: { trimester: 0, module: -1 }, history: [] };
+) || { progress: { trimester: 0, module: null, element: null }, history: [] };
 
 const dashboard = createSlice({
     name: "dashboard",

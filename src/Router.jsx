@@ -7,7 +7,9 @@ const Home = lazy(() => import("./pages/Home")),
     Installation = lazy(() => import("./pages/Installation")),
     Signin = lazy(() => import("./pages/Signin")),
     Dashboard = lazy(() => import("./pages/Dashboard/Dashboard")),
-    Progress = lazy(() => import("./components/Progress/Progress"));
+    Progress = lazy(() => import("./components/Progress/Progress")),
+    Chat = lazy(() => import("./components/Chat/Chat")),
+    Bucket = lazy(() => import("./components/Bucket/Bucket"));
 function Loader() {
     return <div>dee</div>;
 }
@@ -53,8 +55,8 @@ function Router() {
                         }
                     >
                         <Route path="/dashboard/" element={<Progress />} />
-                        <Route path="search" element={<Progress />} />
-                        <Route path="bucket" element={<Progress />} />
+                        <Route path="bucket" element={<Bucket />} />
+                        <Route path="chat" element={<Chat />} />
                         <Route path="settings" element={<Progress />} />
                     </Route>
                     <Route path="logout" element={<Logout />} />

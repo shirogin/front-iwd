@@ -16,6 +16,7 @@
 }
 
 .progressList{
+    padding-top: 5em;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -53,4 +54,7 @@
 }
 .currentElement{
     color: grey;
+}
+.Multi{
+    margin-bottom: "1em"!important;
 }

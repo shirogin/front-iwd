@@ -3,7 +3,7 @@ import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
 import {
     Beenhere as BeenhereIcon,
-    Search as SearchIcon,
+    Chat as ChatIcon,
     MoveToInbox as MoveToInboxIcon,
     Settings as SettingsIcon,
 } from "@mui/icons-material";
@@ -26,12 +26,12 @@ const Navbar = () => {
                     link="/dashboard/"
                 />
                 <NavElement
-                    Element={<SearchIcon color="secondary" />}
-                    link="/dashboard/search"
-                />
-                <NavElement
                     Element={<MoveToInboxIcon color="secondary" />}
                     link="/dashboard/bucket"
+                />
+                <NavElement
+                    Element={<ChatIcon color="secondary" />}
+                    link="/dashboard/chat"
                 />
                 <NavElement
                     Element={<SettingsIcon color="secondary" />}
