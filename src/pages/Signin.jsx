@@ -6,19 +6,19 @@ import { Button, Box, Divider } from "@mui/material";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import GoogleIcon from "@mui/icons-material/Google";
 
-import { useAppSelector, useAppDispatch } from "../../app/hooks";
-import { useSignUpMutation } from "../../app/backend";
-import { prev, setData } from "../../app/slices/installation";
-import { setUser } from "../../app/slices/user";
+import { useAppSelector, useAppDispatch } from "../app/hooks";
+import { useSignInMutation } from "../app/backend";
+import { prev, setData } from "../app/slices/installation";
+import { setUser } from "../app/slices/user";
 
 import { Link } from "react-router-dom";
 
-import BookImg from "../../images/book.svg";
-import RuleImg from "../../images/rule.svg";
+import BookImg from "../images/book.svg";
+import RuleImg from "../images/rule.svg";
 
 const styles = {
     root: {
-        flexGrow: 1,
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -58,8 +58,8 @@ const styles = {
     },
 };
 
-function Step5() {
-    const [signUp] = useSignUpMutation();
+function Signin() {
+    const [signIn] = useSignInMutation();
     const { data } = useAppSelector((state) => state.installation);
     const dispatch = useAppDispatch();
 
@@ -82,7 +82,7 @@ function Step5() {
             />
             <Box>
                 <Typography variant="h3">
-                    Create an account to check on all your corses
+                    Sign in into your existing account
                 </Typography>
                 {/* <Typography paragraph>
                     This will help us to know our students more
@@ -169,25 +169,18 @@ function Step5() {
             <Box>
                 <Box>
                     <Button
-                        onClick={() => dispatch(prev())}
-                        variant="contained"
-                        sx={styles.btn}
-                        color="grey"
-                    >
-                        Back
-                    </Button>
-                    <Button
                         onClick={() => {
-                            if (data.goal) {
-                                signUp({ body: data }).then((res) => {
-                                    dispatch(setUser(res.data));
+                            if (data.email && data.password) {
+                                signIn({ body: data }).then((res) => {
+                                    // dispatch(setUser(res.data));
+                                    console.log(res.data);
                                 });
                             }
                         }}
                         variant="contained"
                         sx={styles.btn}
                     >
-                        Sign up
+                        Sign in
                     </Button>
                 </Box>
                 <Typography
@@ -207,4 +200,4 @@ function Step5() {
     );
 }
 
-export default Step5;
+export default Signin;

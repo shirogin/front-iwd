@@ -5,6 +5,7 @@ import { Suspense, lazy, useEffect } from "react";
 
 const Home = lazy(() => import("./pages/Home")),
     Installation = lazy(() => import("./pages/Installation")),
+    Signin = lazy(() => import("./pages/Signin")),
     Dashboard = lazy(() => import("./pages/Dashboard/Dashboard")),
     Progress = lazy(() => import("./components/Progress/Progress"));
 function Loader() {
@@ -33,6 +34,12 @@ function Router() {
                     <Route
                         path="/"
                         element={user ? <Navigate to="/dashboard" /> : <Home />}
+                    />
+                    <Route
+                        path="signin"
+                        element={
+                            user ? <Navigate to="/dashboard" /> : <Signin />
+                        }
                     />
                     <Route
                         path="installation"

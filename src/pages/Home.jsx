@@ -1,5 +1,5 @@
 import logo from "../images/logo.svg";
-import { Menu, Button, MenuItem, Grid } from "@mui/material";
+import { Menu, Button, Typography, Box, MenuItem, Grid } from "@mui/material";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { chooseLanguage } from "../app/slices/language";
 import mainImage from "../images/main.png";
@@ -52,16 +52,37 @@ const Home = () => {
             </nav>
 
             <Grid container spacing={2} className="Main">
-                <Grid item xs={6}>
-                    <h1>
-                        Study. . .A<span>9</span>ra
-                    </h1>
-                    <h2>engage me and i shall learn</h2>
-                    <p>
-                        3ab9ri replaces lecture videos with hands-on,
-                        interactive problem solving. It’s a better (and more
-                        fun) way to learn.
-                    </p>
+                <Grid item xs={12} md={6}>
+                    <Box
+                        sx={{
+                            fontSize: {
+                                xs: "0.7rem",
+                                sm: "1rem",
+                            },
+                        }}
+                    >
+                        <h1>
+                            Study. . .A<span>9</span>ra
+                        </h1>
+                    </Box>
+                    <Box
+                        sx={{
+                            fontSize: {
+                                xs: "0.7rem",
+                                sm: "1rem",
+                            },
+                            width: {
+                                xs: "100%",
+                            },
+                        }}
+                    >
+                        <h2>engage me and i shall learn</h2>
+                        <p>
+                            3ab9ri replaces lecture videos with hands-on,
+                            interactive problem solving. It’s a better (and more
+                            fun) way to learn.
+                        </p>
+                    </Box>
                     <Grid container item xs={12} sx={{ marginTop: "6em" }}>
                         <Button
                             component={Link}
@@ -92,6 +113,7 @@ const Home = () => {
                     xs={6}
                     direction="row"
                     justifyContent="center"
+                    sx={{ display: { xs: "none", sm: "inherit" } }}
                 >
                     <img src={mainImage} />
                 </Grid>
