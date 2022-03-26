@@ -1,7 +1,8 @@
 import "./Subjects.css";
 
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
+
 const Subjects = ({ click, image, name, progress }) => {
+    console.log(progress);
     return (
         <div onClick={click} className="Subject">
             <div className="SHolder">

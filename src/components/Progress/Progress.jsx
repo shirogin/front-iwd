@@ -56,25 +56,21 @@ const Progress = () => {
                                 key={"S" + el}
                                 image={modules[el].image}
                                 name={modules[el].name}
-                                progress={
-                                    modules[el].elements.filter(
+                                progress={Math.floor(
+                                    (modules[el].elements.filter(
                                         (el) =>
                                             user.history[
                                                 user.studyLevel
                                             ].indexOf(el.id) >= 0
-                                    ).length
-                                }
+                                    ).length /
+                                        modules[el].elements.length) *
+                                        100
+                                )}
                                 click={() => {
                                     dispatch(
                                         setProgress({
                                             ...dashboard.progress,
                                             module: el,
-                                            element: modules[el].elements.find(
-                                                (el) =>
-                                                    user.history[
-                                                        user.studyLevel
-                                                    ].indexOf(el.id) < 0
-                                            ),
                                         })
                                     );
                                 }}
